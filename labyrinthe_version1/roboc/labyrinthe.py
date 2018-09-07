@@ -18,9 +18,19 @@ class Labyrinthe:
         print(self.size)
 
     def affiche_labyrinthe(self):
-        print(self.size)
+        print(self.size) #todo retirer ceci dans la version finale
         for i in range(0, self.size[0]):
             array = ""
             for j in range(0, self.size[1]):
                 array += self.grille[(i, j)]
             print(array)
+
+    def grille_to_chaine(self):
+        list = []
+        for i in range(0, self.size[0]):
+            array = ""
+            for j in range(0, self.size[1]):
+                array += self.grille[(i, j)]
+            array+= '\n'
+            list.append(array)
+        return list

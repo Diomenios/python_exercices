@@ -17,6 +17,7 @@ global save
 for nom_fichier in os.listdir("cartes"):
     if nom_fichier.endswith(".txt"):
         chemin = os.path.join("cartes", nom_fichier)
+        print(chemin)
         nom_carte = nom_fichier[:-3].lower()
         # Regarde si une sauvegarde existe
         if nom_carte == "save.":
