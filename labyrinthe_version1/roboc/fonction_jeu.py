@@ -16,7 +16,7 @@ def play(carte):
      la droite, 'S' vers le bas, 'O' vers la gauche.  Si vous faites suivre votre \
      commande par un chiffre, elle sera répétée autant de fois que votre chiffre.")
     endGame = False
-    while !endGame:
+    while not endGame:
         carte.labyrinthe.affiche_labyrinthe()
         retour = input("")
         if len(retour) == 1:

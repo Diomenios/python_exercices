@@ -24,6 +24,7 @@ for nom_fichier in os.listdir("cartes"):
             with open(chemin, "r") as fichier:
                 contenu = fichier.read()
                 if contenu != "":
+                    #todo optimiser deux lignes en une
                     carte = Carte(nom_carte, contenu)
                     save = carte
                 else:
