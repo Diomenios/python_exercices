@@ -19,9 +19,9 @@ def play(carte):
 
     print("Vous avez lancé la carte : {}".format(carte.nom))
     print("Les commandes sont : 'Q' quitter la partie,'N' vers le haut, 'E' vers \
-    la droite, 'S' vers le bas, 'O' vers la gauche.  Si vous faites suivre votre \
-    commande par un chiffre, elle sera répétée autant de fois que votre chiffre. \
-    Votre personnages est représenté par le token 'X' et les murs par le token 'O'")
+la droite, 'S' vers le bas, 'O' vers la gauche.  Si vous faites suivre votre \
+commande par un chiffre, elle sera répétée autant de fois que votre chiffre. \
+Votre personnages est représenté par le token 'X' et les murs par le token 'O'")
 
     while True:
         carte.labyrinthe.affiche_labyrinthe()
@@ -46,9 +46,9 @@ def play(carte):
         else:
             print("erreur, votre entrée est incorrecte")
             print("Les commandes sont : 'Q' quitter la partie,'N' vers le haut, 'E' vers \
-            la droite, 'S' vers le bas, 'O' vers la gauche.  Si vous faites suivre votre \
-            commande par un chiffre, elle sera répétée autant de fois que votre chiffre. \
-            Votre personnages est représenté par le token 'X' et les murs par le token 'O'")
+la droite, 'S' vers le bas, 'O' vers la gauche.  Si vous faites suivre votre \
+commande par un chiffre, elle sera répétée autant de fois que votre chiffre. \
+Votre personnages est représenté par le token 'X' et les murs par le token 'O'")
 
 def move_switch(lettre, carte, count = 1):
 
