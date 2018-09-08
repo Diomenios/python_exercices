@@ -1,3 +1,4 @@
 #ignore le fichier test.py
 labyrinthe_version1/roboc/test.py
 dictionnaire_ordonne
+labyrinthe_version1/roboc/__pycache__

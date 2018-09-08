@@ -10,10 +10,11 @@ import os
 
 from carte import Carte
 import labyrinthe
+from fonction_jeu import play
 
 # On charge les cartes existantes
 cartes = []
-global save
+save = None
 for nom_fichier in os.listdir("cartes"):
     if nom_fichier.endswith(".txt"):
         chemin = os.path.join("cartes", nom_fichier)
@@ -24,9 +25,7 @@ for nom_fichier in os.listdir("cartes"):
             with open(chemin, "r") as fichier:
                 contenu = fichier.read()
                 if contenu != "":
-                    #todo optimiser deux lignes en une
-                    carte = Carte(nom_carte, contenu)
-                    save = carte
+                    save = Carte(nom_carte, contenu)
                 else:
                     save = None
         else:
@@ -34,16 +33,11 @@ for nom_fichier in os.listdir("cartes"):
                  contenu = fichier.read()
                  carte = Carte(nom_carte, contenu)
                  cartes.append(carte)
-            # Création d'une carte, à compléter
 
 # On affiche les cartes existantes
 print("Labyrinthes existants :")
 for i, carte in enumerate(cartes):
     print("  {} - {}".format(i + 1, carte.nom))
-
-#todo effacer les 2 lignes ci-dessous
-#for i,carte in enumerate(cartes):
-#    carte.labyrinthe.affiche_labyrinthe()
 
 # On verifie si une sauvegarde a ete trouvee
 gameSave = False
@@ -53,8 +47,6 @@ if save != None:
         retour = input("voulez-vous charger la sauvegarde ?(n\o)")
         if retour.lower() == 'o':
             gameSave = True
-            #todo effacer le dossier de la sauvegarde et effacer le print ci-dessous
-            print("chargement de la partie")
             break
         elif retour.lower() == 'n':
             break
@@ -63,8 +55,9 @@ if save != None:
 
 gameMap = None
 if gameSave:
-    print("load the savefile")
-    # todo ecrire le code chargeant la sauvagarde.
+    #todo : à retirer
+    print("chargement de la sauvegarde")
+    play(save)
 else :
     while True:
         retour = input("Veuillez choisir le numéro de la carte que vous voulez jouer :")
@@ -79,5 +72,4 @@ else :
                 print("Votre entrée est incorrecte, veuillez recommencer !")
         except ValueError:
             print("veuillez rentrer un chiffre !")
-
-    #todo launch the game with gameMap
+    play(cartes[gameMap-1])
